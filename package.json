@@ -1,0 +1,16 @@
+{
+  "name": "@ultralud/simple-live-reload",
+  "version": "1.0.5",
+  "description": "Auto reload web browser when changes occour",
+  "main": "main.js",
+  "bin": {
+    "@ultralud/simple-live-reload": "bin/live-reload",
+    "servr": "bin/live-reload"
+  },
+  "author": "Ludvig",
+  "license": "ISC",
+  "dependencies": {
+    "node-watch": "^0.6.3",
+    "ws": "^7.2.1"
+  }
+}
