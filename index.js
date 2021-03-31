@@ -44,6 +44,10 @@ module.exports.cli = function (args) {
             if (name.split("\\").some(dir => dir[0] == "."))
                 return;
 
+            // Ignore node_modules folders
+            if (name.split("\\").some(dir => dir == "node_modules"))
+                return;
+
             const changedFile = name.split("\\")[name.split("\\").length - 1];
             const cssChanged = changedFile.endsWith(".css");
 
