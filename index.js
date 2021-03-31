@@ -8,6 +8,11 @@ const clientScript = fs.readFileSync("client-script.js", "utf8");
 module.exports.cli = function (args) {
     const directories = args.slice(2);
 
+    if (directories.length == 0) {
+        console.log("No directories to watch where specified. They are supposed to be specified as arguments");
+        return;
+    }
+
     const server = http.createServer(function (req, res) {
         if (req.url == "/client-script.js") {
             res.writeHead(200, { 'Content-Type': 'application/javascript' });
@@ -24,7 +29,7 @@ module.exports.cli = function (args) {
 
     const ws = new WebSocketServer({ server });
 
-    console.log("Started live reload server. Listening on port 9731");
+    console.log("Started live reload server. Watching directories:", directories.join(", "));
 
     const connections = new Set;
     ws.on("connection", conn => {

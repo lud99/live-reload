@@ -1,10 +1,10 @@
 {
-  "name": "@ultralud/simple-live-reload",
-  "version": "1.0.5",
+  "name": "@ultralud/live-reload",
+  "version": "1.0.0",
   "description": "Auto reload web browser when changes occour",
-  "main": "main.js",
+  "main": "index.js",
   "bin": {
-    "@ultralud/simple-live-reload": "bin/live-reload",
+    "@ultralud/live-reload": "bin/live-reload",
     "servr": "bin/live-reload"
   },
   "author": "Ludvig",
