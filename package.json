@@ -5,7 +5,7 @@
   "main": "index.js",
   "bin": {
     "@ultralud/live-reload": "bin/live-reload",
-    "servr": "bin/live-reload"
+    "live-reload": "bin/live-reload"
   },
   "author": "Ludvig",
   "license": "ISC",
