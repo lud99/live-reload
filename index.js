@@ -3,11 +3,9 @@ const watch = require("node-watch");
 const http = require('http');
 const fs = require("fs");
 
-const clientScript = fs.readFileSync("client-script.js", "utf8");
+const clientScript = fs.readFileSync(__dirname + "/client-script.js", "utf8");
 
-module.exports.cli = function (args) {
-    const directories = args.slice(2);
-
+module.exports.start = function (directories) {
     if (directories.length == 0) {
         console.log("No directories to watch where specified. They are supposed to be specified as arguments");
         return;

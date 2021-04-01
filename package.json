@@ -1,6 +1,6 @@
 {
   "name": "@thebigbear/live-reload",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Auto reload web browser when changes occour",
   "main": "index.js",
   "bin": {
