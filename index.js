@@ -7,7 +7,7 @@ const clientScript = fs.readFileSync(__dirname + "/client-script.js", "utf8");
 
 module.exports.start = function (directories) {
     if (directories.length == 0) {
-        console.log("No directories to watch where specified. They are supposed to be specified as arguments");
+        console.log("[Live Server] No directories to watch where specified. They are supposed to be specified as arguments");
         return;
     }
 
@@ -27,7 +27,7 @@ module.exports.start = function (directories) {
 
     const ws = new WebSocketServer({ server });
 
-    console.log("Started live reload server. Watching directories:", directories.join(", "));
+    console.log("[Live Server] Started server. Watching directories:", directories.join(", "));
 
     const connections = new Set;
     ws.on("connection", conn => {
@@ -49,7 +49,7 @@ module.exports.start = function (directories) {
             const changedFile = name.split("\\")[name.split("\\").length - 1];
             const cssChanged = changedFile.endsWith(".css");
 
-            console.log("Change detected in '%s', Reloading", name);
+            console.log("[Live Server] Change detected in '%s', Reloading", name);
 
             connections.forEach(conn => {
                 conn.send(cssChanged ? "refreshcss" : "refresh");
